@@ -21,16 +21,19 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onTap(_ sender: Any) {
-        print("Hello")
-        
         view.endEditing(true)
         
     }
+
     
     @IBAction func calculateTip(_ sender: Any) {
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.locale = Locale.current
+        
+        
         // Get the bill amount
         let bill = Double(billField.text!) ?? 0
-        
         
         //Calculate the tip and total
         let tipPerecentages = [0.1, 0.2, 0.3]
